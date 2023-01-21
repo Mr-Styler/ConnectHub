@@ -10,6 +10,9 @@ router.route('/sign-up')
 router.route('/reset-password')
     .get(AuthController.getResetPwd)
 
+router.route('/new-password')
+    .get(AuthController.getNewPwd)
+
     router.route('/settings')
     .get(AuthController.getSettings)
 

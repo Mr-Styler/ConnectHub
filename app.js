@@ -8,12 +8,14 @@ const authRoute = require('./routes/auth');
 const publicRoute = require('./routes/public');
 const adminRoute = require('./routes/admin');
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.use("/admin", adminRoute)
 app.use(authRoute)
 app.use(publicRoute)
+
+app.use(express.static(__dirname + "/public"))
+
 
 module.exports = app;
