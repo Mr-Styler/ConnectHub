@@ -9,6 +9,8 @@ var userSchema = new mongoose.Schema({
         type: String,
         required: [true, "A user must have an email"]
     },
+    resetToken: String,
+    resetTokenExpiration: Date,
     gender: String,
     school: {
         type: mongoose.Schema.Types.ObjectId,
@@ -19,11 +21,10 @@ var userSchema = new mongoose.Schema({
     degree: String,
     level: String,
     photo: String,
-    password: {
-        type: String,
-        required: [true, "A user must have a security password"]
+    isAdmin: {
+        type: Boolean,
+        default: false
     },
-    isAdmin: Boolean,
     socketId: String,
     chatrooms: [
         {
